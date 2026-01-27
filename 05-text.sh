@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "please enter your passwords that you need:"
-read "$text"
+read TEXT
