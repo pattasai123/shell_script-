@@ -11,6 +11,7 @@ execute(){
         echo "successfully installed $2"
     else
         echo "failure"
+    fi
 }
 dnf install nginx -y
 q1=$?
