@@ -15,7 +15,7 @@ execute(){
 }
 dnf install nginx -y
 q1=$?
-execute $q1 $nginx
+execute $q1 nginx
 dnf install mysql -y
 q2=$?
-execute $q2 $mysql
+execute $q2 mysql
