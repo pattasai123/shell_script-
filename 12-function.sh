@@ -16,7 +16,7 @@ execute(){
 dnf list installed nginx
 n1=$?
 if [ $n1 -eq 0 ]; then
-    echo "$r it was installed in your system"
+    echo "${r} it was installed in your system"
 else
     dnf install nginx -y
     q1=$?
@@ -25,7 +25,7 @@ fi
 dnf list installed mysql
 n2=$?
 if [ $n2 -eq 0 ]; then
-    echo "$r it was installed in your system"
+    echo "${r} it was installed in your system"
 else
     dnf install mysql -y
     q2=$?
