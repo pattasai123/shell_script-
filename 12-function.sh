@@ -5,7 +5,7 @@ user=$(id -u)
 if [ $user -ne 0 ]; then
     echo "ERROR:: please run this with root access"
 fi
-r=$(\e [31m)
+r='\e [31m)'
 execute(){
     if [ $1 -eq 0 ]; then 
         echo "successfully installed $2"
