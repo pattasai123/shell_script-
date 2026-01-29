@@ -13,9 +13,21 @@ execute(){
         echo "failure"
     fi
 }
-dnf install nginx -y
-q1=$?
-execute $q1 nginx
-dnf install mysql -y
-q2=$?
-execute $q2 mysql
+dnf list installed nginx
+n1=$?
+if [ $n1 -eq 0 ]; then
+    echo "it was installed in your system"
+else
+    dnf install nginx -y
+    q1=$?
+    execute $q1 nginx
+fi
+dnf list installed mysql
+n2=$?
+if [ $n2 -eq 0 ]; then
+    echo "it was installed in your system"
+else
+    dnf install mysql -y
+    q2=$?
+    execute $q2 mysql
+fi
