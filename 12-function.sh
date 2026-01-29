@@ -10,7 +10,7 @@ g='\e[32m'
 o='\e[33m'
 l='\e[34m'
 m='\e[35m'
-m='\e[36m'
+n='\e[36m'
 p='\e[37m'
 echo -e "$r HELLO"
 echo -e "$g HELLO"
