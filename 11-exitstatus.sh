@@ -6,9 +6,7 @@ if [ $user -ne 0 ]; then
     echo "ERROR:: please run this with root access"
 fi
 
-query=$(dnf instll nginx -y)
-
-if [ $query -eq 0 ]; then 
+if dnf install nginx -y; then 
     echo "Success"
 else
     echo "failure"
