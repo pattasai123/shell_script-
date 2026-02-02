@@ -4,9 +4,10 @@ user=$(id -u)
 if [ $user -ne 0 ]; then
     echo "ERROR:: please run this with root access"
 fi
-folder="sudo mkdir -p /var/log/shell-script"
+folder="var/log/shell-script"
 file=$(echo $0| cut -d "." -f1)
 log_file="$folder/$file.log"
+mkdir -p $folder
 r='\e[31m'
 g='\e[32m'
 o='\e[33m'
