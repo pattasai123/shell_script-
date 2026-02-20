@@ -9,7 +9,7 @@ if [ $dir -ne 0 ]; then
 fi
 source=$1
 destination=$2
-if [ $* -lt 2 ]; then
+if [ $@ -ne 2 ]; then
     usage
 fi
 
