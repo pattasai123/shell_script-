@@ -8,7 +8,7 @@ if [ dir -ne 0 ]; then
     exit 1;
 fi
 val=5
-while 5 -gt 0
+while [ $val -gt 0 ]
 do 
     echo "$val"
     val=$(($val-1))
