@@ -3,13 +3,13 @@ r="\e[31m"
 g='\e[32m'
 n='\e[33m'
 dir=$(id -u)
-if [ dir -ne 0 ]; then
+if [ $dir -ne 0 ]; then
     echo -e "$r please access this file with root directory $n"
     exit 1;
 fi
 source=$1
 destination=$2
-if [ $* -lt 2 ]
+if [ $* -lt 2 ]; then
     usage
 fi
 
