@@ -37,14 +37,14 @@ if [ ! -z "$files" ]; then
     filename="$destination/applogs-$date.zip"
     find "$source" -name "*.log" -type f | zip -@ -j "$filename"
     if [ -f "$filename" ]; then
-        echo "${g} success... ${n}"
+        echo -e "${g} success... ${n}"
         find "$source" -name "*.log" -type f | while IFS= read -r filepath
         do 
             rm -f $filepath
-            echo "Deleting $filepath"
+            echo -e "Deleting $filepath"
         done
     else
-        echo "Archieval ... ${r} FAILURE ${n}"
+        echo -e "Archieval ... ${r} FAILURE ${n}"
         exit 1
     fi
 else
