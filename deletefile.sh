@@ -31,12 +31,12 @@ fi
 
 files=$(find "$source" -name "*.log" -type f)
 
-if [ ! -z "{$files}" ]; then
+if [ ! -z "$files" ]; then
     echo "file exit"
-    date=$(date)
+    date=$(date +%F-%H-%M-%S)
     filename="$destination/applogs-$date.zip"
     find "$source" -name "*.log" -type f | zip -@ -j "$filename"
-    if [ -f $filename ]; then
+    if [ -f "$filename" ]; then
         echo "$g success... $n"
         find "$source" -name "*.log" -type f | while IFS= read -r filepath
         do 
@@ -44,9 +44,9 @@ if [ ! -z "{$files}" ]; then
             echo "Deleting $filepath"
         done
     else
-        echo "Archieval ... $R FAILURE $N"
+        echo "Archieval ... $r FAILURE $n"
         exit 1
     fi
 else
-    echo -e "No files to archeive ... $Y SKIPPING $N"
+    echo -e "No files to archeive ... $r SKIPPING $n"
 fi
